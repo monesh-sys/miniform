@@ -1,142 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>Microformix | Smart Student Data Collection</title>
+<title>Microformix | Smart Student Data Collection</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Microformix is a smart student data collection website created by Monesh.">
-    <meta name="author" content="Monesh">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Microformix is a smart student data collection website created by Monesh.">
+<meta name="author" content="Monesh">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="logo.png">
 
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            color: white;
-            background: linear-gradient(-45deg, #000000, #0f2027, #203a43, #000000);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-        }
+<style>
+/* RESET */
+* {
+    box-sizing: border-box;
+}
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+/* PAGE */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
 
-        .container {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            width: 90%;
-            max-width: 420px;
-            border-radius: 16px;
-            box-shadow: 0 0 25px rgba(0,255,204,0.35);
-            text-align: center;
-        }
+/* CARD */
+.container {
+    background: #111;
+    padding: 30px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0,255,204,0.4);
+    text-align: center;
+}
 
-        .logo {
-            width: 90px;
-            margin-bottom: 10px;
-        }
+/* LOGO */
+.logo {
+    width: 90px;
+    margin-bottom: 10px;
+}
 
-        h2 {
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
+/* TEXT */
+h2 {
+    margin: 5px 0;
+    font-size: 28px;
+}
 
-        .tagline {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
+.tagline {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
 
-        label {
-            font-size: 16px;
-            display: block;
-            margin-top: 12px;
-            text-align: left;
-        }
+/* FORM */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+    font-size: 16px;
+}
 
-        /* ✅ INPUTS & COMMENT BOX FIXED */
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 6px;
-            font-size: 15px;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.95);
-            color: #000;
-        }
+/* 🔥 FORCE INPUT VISIBILITY */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 2px solid #00ffcc;
+    background: #ffffff !important;
+    color: #000000 !important;
+    outline: none;
+}
 
-        textarea {
-            resize: vertical;
-            min-height: 90px;
-        }
+/* COMMENT BOX */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
 
-        ::placeholder {
-            color: #555;
-        }
+/* PLACEHOLDER */
+::placeholder {
+    color: #555;
+}
 
-        input[type="submit"] {
-            width: 100%;
-            margin-top: 18px;
-            padding: 12px;
-            font-size: 15px;
-            background: #00ffcc;
-            color: black;
-            font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+/* SUBMIT */
+input[type="submit"] {
+    margin-top: 18px;
+    background: #00ffcc;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        input[type="submit"]:hover {
-            background: #00ddb3;
-        }
-
-        .creator {
-            margin-top: 15px;
-            font-size: 13px;
-            opacity: 0.75;
-        }
-    </style>
+/* CREATOR */
+.creator {
+    margin-top: 15px;
+    font-size: 13px;
+    opacity: 0.75;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- LOGO -->
     <img src="logo.png" class="logo" alt="Microformix Logo">
 
     <h2>Microformix</h2>
     <div class="tagline">Smart Student Data Collection</div>
 
-    <!-- FORM -->
     <form action="https://script.google.com/macros/s/AKfycbwaGKUlnahOD-xf0ex5bbxVVqOiC6QY75UIFeGconjdhNkJEM1sBuDUVqTQyHiLrzRT/exec" method="POST">
 
         <label>Name</label>
-        <input type="text" name="name" required>
+        <input type="text" name="name" placeholder="Enter your name" required>
 
         <label>Class</label>
-        <input type="text" name="cls" required>
+        <input type="text" name="cls" placeholder="Enter your class" required>
 
         <label>Section</label>
-        <input type="text" name="sec" required>
+        <input type="text" name="sec" placeholder="Enter your section" required>
 
-        <!-- ✅ COMMENT BOX -->
+        <!-- ✅ COMMENT BOX (100% VISIBLE) -->
         <label>Comments / Others</label>
         <textarea name="comments" placeholder="Write your comments or feedback here..."></textarea>
 
