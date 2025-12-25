@@ -67,27 +67,38 @@
             text-align: left;
         }
 
+        /* ✅ INPUTS & COMMENT BOX FIXED */
         input[type="text"],
-        textarea,
-        input[type="submit"] {
+        textarea {
             width: 100%;
             padding: 12px;
             margin-top: 6px;
             font-size: 15px;
             border: none;
             border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #000;
         }
 
         textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 90px;
+        }
+
+        ::placeholder {
+            color: #555;
         }
 
         input[type="submit"] {
+            width: 100%;
             margin-top: 18px;
+            padding: 12px;
+            font-size: 15px;
             background: #00ffcc;
             color: black;
             font-weight: bold;
+            border: none;
+            border-radius: 10px;
             cursor: pointer;
         }
 
