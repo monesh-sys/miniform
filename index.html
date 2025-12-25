@@ -2,23 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<title>Microformix | Smart Student Data Collection</title>
-
-<meta name="description" content="Microformix is a smart student data collection website created by Monesh.">
-<meta name="author" content="Monesh">
-<meta name="robots" content="index, follow">
+<title>MiniForm | Student Data Collection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="icon" type="image/png" href="logo.png">
-
 <style>
-/* RESET */
-* {
-    box-sizing: border-box;
-}
-
-/* PAGE */
 body {
     margin: 0;
     min-height: 100vh;
@@ -30,7 +16,6 @@ body {
     color: white;
 }
 
-/* CARD */
 .container {
     background: #111;
     padding: 30px;
@@ -41,58 +26,27 @@ body {
     text-align: center;
 }
 
-/* LOGO */
-.logo {
-    width: 90px;
-    margin-bottom: 10px;
-}
+.logo { width: 90px; margin-bottom: 10px; }
+h2 { margin: 5px 0; font-size: 28px; }
+.tagline { font-size: 14px; opacity: 0.8; margin-bottom: 20px; }
 
-/* TEXT */
-h2 {
-    margin: 5px 0;
-    font-size: 28px;
-}
+label { display: block; text-align: left; margin-top: 12px; font-size: 16px; }
 
-.tagline {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 20px;
-}
-
-/* FORM */
-label {
-    display: block;
-    text-align: left;
-    margin-top: 12px;
-    font-size: 16px;
-}
-
-/* 🔥 FORCE INPUT VISIBILITY */
-input,
-textarea {
+input, textarea {
     width: 100%;
     padding: 12px;
     margin-top: 6px;
     font-size: 15px;
     border-radius: 10px;
     border: 2px solid #00ffcc;
-    background: #ffffff !important;
-    color: #000000 !important;
+    background: #ffffff;
+    color: #000000;
     outline: none;
 }
 
-/* COMMENT BOX */
-textarea {
-    min-height: 100px;
-    resize: vertical;
-}
+textarea { min-height: 100px; resize: vertical; }
+::placeholder { color: #555; }
 
-/* PLACEHOLDER */
-::placeholder {
-    color: #555;
-}
-
-/* SUBMIT */
 input[type="submit"] {
     margin-top: 18px;
     background: #00ffcc;
@@ -101,26 +55,26 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-/* CREATOR */
-.creator {
-    margin-top: 15px;
-    font-size: 13px;
-    opacity: 0.75;
+.creator { margin-top: 15px; font-size: 13px; opacity: 0.75; }
+
+.success-message {
+    display: none;
+    margin-top: 20px;
+    color: #00ffcc;
+    font-weight: bold;
+    font-size: 16px;
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
-
-    <img src="logo.png" class="logo" alt="Microformix Logo">
-
-    <h2>Microformix</h2>
+    <img src="logo.png" class="logo" alt="MiniForm Logo">
+    <h2>MiniForm</h2>
     <div class="tagline">Smart Student Data Collection</div>
 
-    <form action="https://script.google.com/macros/s/AKfycbwLXSJEbfFAbDL3dzrz5XxdrYTHlCWxwyuuLujRqHvuh-F_-hUhKcaW2BL9hJbjZtBj-Q/exec" method="POST">
-
+    <!-- FORM -->
+    <form id="miniform" action="https://script.google.com/macros/s/AKfycbwaGKUlnahOD-xf0ex5bbxVVqOiC6QY75UIFeGconjdhNkJEM1sBuDUVqTQyHiLrzRT/exec" method="POST">
         <label>Name</label>
         <input type="text" name="name" placeholder="Enter your name" required>
 
@@ -130,21 +84,45 @@ input[type="submit"] {
         <label>Section</label>
         <input type="text" name="sec" placeholder="Enter your section" required>
 
-        <!-- ✅ COMMENT BOX (100% VISIBLE) -->
         <label>Comments / Others</label>
-        <textarea name="comments" placeholder="Write your comments or feedback here..."></textarea>
+        <textarea name="comments" placeholder="Write your comments here..."></textarea>
 
         <input type="submit" value="Submit">
-
     </form>
+
+    <!-- Success message -->
+    <div class="success-message" id="successMessage">
+        Your form submitted successfully! Thank you.
+    </div>
 
     <div class="creator">
         Created by <strong>Monesh</strong>
     </div>
-
 </div>
+
+<script>
+// Handle form submit
+const form = document.getElementById("miniform");
+const message = document.getElementById("successMessage");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent default submit
+    const url = form.action;
+
+    fetch(url, {
+        method: "POST",
+        body: new FormData(form)
+    }).then(response => {
+        // Show success message
+        message.style.display = "block";
+        // Reset the form
+        form.reset();
+    }).catch(error => {
+        alert("There was an error submitting the form. Please try again.");
+        console.error(error);
+    });
+});
+</script>
 
 </body>
 </html>
-
-
