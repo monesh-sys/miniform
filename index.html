@@ -5,23 +5,16 @@
 <title>MiniForm | Student Data Collection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Meta Tags for SEO -->
-<meta name="description" content="MiniForm website by Monesh – smart student data collection with comments.">
+<!-- SEO -->
+<meta name="description" content="MiniForm – Smart student data collection tool by Monesh">
 <meta name="author" content="Monesh">
 <meta name="robots" content="index, follow">
-
-<!-- Open Graph -->
-<meta property="og:title" content="MiniForm">
-<meta property="og:description" content="MiniForm website by Monesh – smart student data collection with comments.">
-<meta property="og:image" content="https://monesh-sys.github.io/miniform/logo.png">
-<meta property="og:url" content="https://monesh-sys.github.io/miniform/">
-<meta property="og:type" content="website">
 
 <link rel="icon" type="image/png" href="logo.png">
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5510415259126887"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 <style>
 body {
@@ -30,8 +23,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
     background: #0b0b0b;
+    font-family: Arial, sans-serif;
     color: white;
 }
 
@@ -47,115 +40,118 @@ body {
 
 .logo { width: 90px; margin-bottom: 10px; }
 h2 { margin: 5px 0; font-size: 28px; }
-.tagline { font-size: 14px; opacity: 0.8; margin-bottom: 20px; }
+.tagline { font-size: 14px; opacity: 0.8; margin-bottom: 15px; }
 
-label { display: block; text-align: left; margin-top: 12px; font-size: 16px; }
+label {
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+}
 
 input, textarea {
     width: 100%;
     padding: 12px;
     margin-top: 6px;
-    font-size: 15px;
     border-radius: 10px;
     border: 2px solid #00ffcc;
-    background: #ffffff;
-    color: #000000;
-    outline: none;
 }
 
-textarea { min-height: 100px; resize: vertical; }
-::placeholder { color: #555; }
+textarea { min-height: 90px; }
 
 input[type="submit"] {
     margin-top: 18px;
     background: #00ffcc;
-    color: #000;
     font-weight: bold;
     cursor: pointer;
 }
 
-.creator { margin-top: 15px; font-size: 13px; opacity: 0.75; }
+.ad-box {
+    margin: 15px 0;
+}
 
 .success-message {
     display: none;
-    margin-top: 20px;
     color: #00ffcc;
     font-weight: bold;
-    font-size: 16px;
-    opacity: 1;
-    transition: opacity 1s ease;
+    margin-top: 15px;
 }
 
-.ad-container {
-    margin: 20px 0;
-    text-align: center;
+.creator {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 10px;
 }
 </style>
 </head>
+
 <body>
-
 <div class="container">
-    <img src="logo.png" class="logo" alt="MiniForm Logo">
-    <h2>MiniForm</h2>
-    <div class="tagline">Smart Student Data Collection</div>
 
-    <!-- Google AdSense Ad -->
-    <div class="ad-container">
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-5510415259126887"
-            data-ad-slot="1234567890"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
+<img src="logo.png" class="logo" alt="MiniForm Logo">
+<h2>MiniForm</h2>
+<div class="tagline">Smart Student Data Collection</div>
 
-    <!-- FORM -->
-    <form id="miniform" 
-          action="https://script.google.com/macros/s/AKfycbxaVNeX4pSPhkIVxNNU-cQRL0W3dAxT9FEDmU0li40wdXNXEwta8CGUNGuNbVQGpT50lg/exec" 
-          method="POST" 
-          target="hidden_iframe" 
-          onsubmit="submitted=true;">
-
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Enter your name" required>
-
-        <label>Class</label>
-        <input type="text" name="cls" placeholder="Enter your class" required>
-
-        <label>Section</label>
-        <input type="text" name="sec" placeholder="Enter your section" required>
-
-        <label>Comments / Others</label>
-        <textarea name="comments" placeholder="Write your comments here..."></textarea>
-
-        <input type="submit" value="Submit">
-    </form>
-
-    <!-- Success message -->
-    <div class="success-message" id="successMessage">
-        Your form submitted successfully To Monesh! Thank you.
-    </div>
-
-    <div class="creator">
-        Created by <strong>Monesh</strong>
-    </div>
+<!-- 🔹 AD 1 (Top Ad) -->
+<div class="ad-box">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5510415259126887"
+     data-ad-slot="7652012237"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
-<!-- Hidden iframe to submit without page reload -->
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="
-if(submitted) {
-    var msg = document.getElementById('successMessage');
-    msg.style.display='block';
-    msg.style.opacity = 1;
-    document.getElementById('miniform').reset();
-    submitted=false;
-    setTimeout(function(){
-        msg.style.opacity = 0;
-        setTimeout(function(){ msg.style.display='none'; }, 1000);
-    }, 5000);
+<!-- FORM -->
+<form id="miniform"
+action="https://script.google.com/macros/s/AKfycbxaVNeX4pSPhkIVxNNU-cQRL0W3dAxT9FEDmU0li40wdXNXEwta8CGUNGuNbVQGpT50lg/exec"
+method="POST"
+target="hidden_iframe"
+onsubmit="submitted=true;">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Class</label>
+<input type="text" name="cls" required>
+
+<label>Section</label>
+<input type="text" name="sec" required>
+
+<label>Comments</label>
+<textarea name="comments"></textarea>
+
+<input type="submit" value="Submit">
+</form>
+
+<!-- 🔹 AD 2 (Bottom Ad) -->
+<div class="ad-box">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5510415259126887"
+     data-ad-slot="1469747266"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div class="success-message" id="successMessage">
+Form submitted successfully. Thank you!
+</div>
+
+<div class="creator">Created by <b>Monesh</b></div>
+
+</div>
+
+<iframe name="hidden_iframe" style="display:none" onload="
+if(submitted){
+document.getElementById('successMessage').style.display='block';
+document.getElementById('miniform').reset();
+submitted=false;
 }"></iframe>
 
 <script>
